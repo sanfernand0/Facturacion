@@ -1,4 +1,4 @@
-Facturación hecha en C#
+Sistema de Facturación hecha en C#
 
 Este fue mi primer proyecto cuando estaba estudiando en la universidad. Si ven esta programado para que funcionará.
 
