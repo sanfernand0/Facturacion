@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.OleDb;
-using Microsoft.Reporting.WinForms;
-using DGVPrinterHelper;
-using System.Globalization;
+using System.Drawing;
+using System.Windows.Forms;
 namespace Sistema
 {
     public partial class rptventasPorArticulo : Form
@@ -70,7 +62,7 @@ namespace Sistema
             {
                 conexion.Close();
             }
-            
+
 
             groupBox2.Enabled = true;
             groupBox4.Enabled = false;
@@ -88,7 +80,7 @@ namespace Sistema
             while (reader2.Read())
             {
 
-                    facturas.Add(reader2.GetString(0));
+                facturas.Add(reader2.GetString(0));
 
             }
             textBox5.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
@@ -98,7 +90,7 @@ namespace Sistema
         }
 
 
-    
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -130,7 +122,7 @@ namespace Sistema
                     //printer.FooterSpacing = 15;
                     //printer.PrintDataGridView(dataGridView1);
 
-                    
+
                 }
                 else
                 {
@@ -328,17 +320,17 @@ namespace Sistema
             try
             {
                 suma = 0;
-                 credito = 0;
-                 contado = 0;
-                 sub = 0;
-                 isv = 0;
+                credito = 0;
+                contado = 0;
+                sub = 0;
+                isv = 0;
                 tot = 0;
 
                 OleDbDataAdapter data = new OleDbDataAdapter(consulta, conexion);
                 data.Fill(dt);
                 foreach (DataRow dr in dt.Rows)
                 {
-                    if(dr["TipoVenta"].ToString().ToUpper() == "CONTADO")
+                    if (dr["TipoVenta"].ToString().ToUpper() == "CONTADO")
                     {
                         contado += Convert.ToDouble(dr["Total"]);
                     }
@@ -373,7 +365,7 @@ namespace Sistema
                 if (!(dt.Columns.Contains("TIPO")))
                 {
                     dt.Columns.Add("TIPO", typeof(System.String));
-  
+
                 }
                 foreach (DataRow r in dt.Rows)
                 {
@@ -381,7 +373,7 @@ namespace Sistema
                 }
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
@@ -420,9 +412,10 @@ namespace Sistema
                         {
                             creditoP += Convert.ToDouble(dr["Total"]);
                         }
-                    }      
+                    }
 
-                    if (string.IsNullOrEmpty(dr["isv"].ToString())){
+                    if (string.IsNullOrEmpty(dr["isv"].ToString()))
+                    {
                         dr["ISV"] = 0;
                         dr["TotalISV"] = 0;
 
@@ -481,12 +474,12 @@ namespace Sistema
             string group2 = " group by numero_prestamo, fecha, cliente, vendedor, tipo";
 
 
-            string c2 = c + " WHERE numero_factura='" + textBox5.Text + "'" +  group + order;
-            string c7 = c  + group + order;
+            string c2 = c + " WHERE numero_factura='" + textBox5.Text + "'" + group + order;
+            string c7 = c + group + order;
 
 
             string ccc = c + " WHERE numero_factura='" + textBox5.Text + "' AND fecha between #" + dateTimePicker1.Value.ToShortDateString() + "# AND #" + dateTimePicker2.Value.ToShortDateString() + "#" + group + order;
-            string cc = c + " WHERE fecha between Format(#" + dateTimePicker1.Value.ToShortDateString() +"#, 'm/d/yyyy')" + " AND Format(#" + dateTimePicker2.Value.ToShortDateString() + "#, 'm/d/yyyy')"  + group + order;
+            string cc = c + " WHERE fecha between Format(#" + dateTimePicker1.Value.ToShortDateString() + "#, 'm/d/yyyy')" + " AND Format(#" + dateTimePicker2.Value.ToShortDateString() + "#, 'm/d/yyyy')" + group + order;
 
 
 
@@ -506,7 +499,7 @@ namespace Sistema
                     {
                         dt.Clear();
                         dataGridView1.DataSource = "";
-              
+
                         funcion(c7);
                         funcion2(vv);
                     }
@@ -538,7 +531,7 @@ namespace Sistema
                 }
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
