@@ -119,7 +119,7 @@ namespace Sistema
                 if (comboBox1.Text == "Geminis")
                 {
                     //Program.GGG.conectar = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + @"\\DESKTOP-51HB388" + @"\conexion\Base.accdb";
-                    Program.GGG.conectar = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\Base.accdb";
+                    Program.GGG.conectar = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\\..\\..\\..\\Base.accdb";
                     conexion = new OleDbConnection(Program.GGG.conectar);
                     Program.GGG.empresa = "AUTOREPUESTOS \"HONDUPARTES\" ";
                     Program.GGG.correo = "honduauto@yahoo.com";
