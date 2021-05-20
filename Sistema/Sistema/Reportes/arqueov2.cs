@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
-using Microsoft.Reporting.WinForms;
 using DGVPrinterHelper;
 namespace Sistema
 {
