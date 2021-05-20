@@ -11,3 +11,6 @@ El sistema cuenta con dos menús, uno para administrador y otro para vendedores.
 Menú administrador > Funcionalidades: -Compras -Compras internacionales -Notas de crédito. -Notas de debito -Reportes -Mantenimientos de clientes, datos, proveedores, inventario, reimpresión, anulación, consultas, etc.
 
 Menú vendedores > Funcionalidades -Facturación -Prestamos -Cotizaciones -Traslados -Consultas
+
+
+Para preparar el ambiente bastara compilar la solucion. Y debe cambiar la ruta de la base de datos. Esto lo puede hacer en login.cs en la linea 122
