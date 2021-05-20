@@ -12,5 +12,4 @@ Menú administrador > Funcionalidades: -Compras -Compras internacionales -Notas 
 
 Menú vendedores > Funcionalidades -Facturación -Prestamos -Cotizaciones -Traslados -Consultas
 
-
-Para preparar el ambiente bastara compilar la solucion. Y debe cambiar la ruta de la base de datos. Esto lo puede hacer en login.cs en la linea 122
+En caso de error de compilacion ver imagenes aquí subidas.
